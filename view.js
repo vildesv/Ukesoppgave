@@ -4,8 +4,17 @@ function show(){
     let html = ``
     for(let i = 0; i < model.stemmer.length; i++){
         html += `
-        <button onclick="vote(${i})">${model.stemmer[i].navn}</button> ${model.stemmer[i].antallStemmer} <button onclick="slette(${i})">Slett</button><br>
-        `
+        <button onclick="vote(${i})">${model.stemmer[i].navn}</button> ${model.stemmer[i].antallStemmer} 
+        <button onclick="slette(${i})">Slett</button><br>
+        `;
     }
+
+    html += `
+        <br>
+        <button onclick="leggTil()">Legg til</button>
+        <br>
+        <button onclick="endre()">Endre</button>
+    `;
+
 appDiv.innerHTML = html;
 }

@@ -15,4 +15,9 @@ const model = {
             antallStemmer: 0,
         },
     ],
+
+    inputs: {
+            navn: "",
+            antallStemmer: 0,
+    },
 }
