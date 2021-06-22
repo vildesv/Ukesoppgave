@@ -20,4 +20,6 @@ const model = {
             navn: "",
             antallStemmer: 0,
     },
+
+    leggTilNy: '',
 }

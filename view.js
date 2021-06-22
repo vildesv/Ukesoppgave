@@ -11,8 +11,7 @@ function show(){
 
     html += `
         <br>
-        <button onclick="leggTil()">Legg til</button>
-        <br>
+        <button onclick="leggTil()">Legg til</button>${model.leggTilNy}
         <button onclick="endre()">Endre</button>
     `;
 
