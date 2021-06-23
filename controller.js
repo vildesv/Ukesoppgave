@@ -16,7 +16,6 @@ function leggTil() {
     show();
 }
 
-
 function lagre(){
     if(model.inputs.navn == "" || model.inputs.antallStemmer == ''){
         show();
@@ -32,8 +31,5 @@ function lagre(){
     model.inputs.antallStemmer = '';
 
     model.leggTilNy = '';
-    show(); 
+    show();    
 }
-
-
-
