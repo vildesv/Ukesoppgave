@@ -1,4 +1,5 @@
 const model = {
+  
     stemmer: [
         {
             navn: "Vilde", 
@@ -15,7 +16,7 @@ const model = {
             antallStemmer: 0,
         },
     ],
-
+    feilmelding: '',
     inputs: {
             navn: "",
             antallStemmer: 0,

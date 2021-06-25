@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Unit test</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
+     <script src="model.js"></script> 
+    <script src="controller.js"></script>
+
+    <script>
+       
+        function show() {}
+
+        QUnit.test('legg til ny person', function (assert){
+            model.inputs.navn = 'Janne'
+            lagre()
+            const actual = model.stemmer[3].navn;
+            const expected = 'Janne';
+
+            assert.equal(actual, expected)
+            assert.equal(model.stemmer.length, 4)
+        });
+
+        QUnit.test('legg til ny person feilmelding', function(assert){
+            model.inputs.navn = ''
+            lagre()
+            const actual = model.feilmelding;
+            const expected = 'Du må fylle inn';
+
+            assert.equal(actual, expected)
+        });
+
+        QUnit.test('slette', function (assert){
+            model.stemmer = [1, 2, 3, 4]
+            slette(3)
+            const actual = model.stemmer;
+            const expected = [1, 2, 3];
+
+            assert.deepEqual(actual, expected)
+            assert.equal(model.stemmer.length, 3)
+        });
+
+        QUnit.test('endre', function (assert){
+            model.stemmer = [
+                {
+                    navn: "Vilde",
+                    antallStemmer: 0,
+                },
+
+                {
+                    navn: "Therese",
+                    antallStemmer: 0,
+                },
+
+                {
+                    navn: "Terje",
+                    antallStemmer: 0,
+                },
+            ],
+
+
+            model.inputs.navn = 'Geir'
+            lagreEndring(2)
+            const actual = model.stemmer[2].navn;
+            const expected = 'Geir';
+
+            assert.equal(actual, expected)
+        });
+
+    </script>
+
+
+
+</body>
